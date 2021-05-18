@@ -60,17 +60,20 @@ Route::get('paises' , function(){
             "moneda" => "Guarani",
             "poblacion" => 7
 
-        ]
-    ];
+        ],
+        "Brazil" => [
+            "capital" => "Brasilia",
+            "moneda" => "Real brasileño",
+            "poblacion" => 211
 
-    //recorrer el arreglo de paises
-    foreach ($paises as $indice => $valor){
-        echo $indice;
-        echo "<pre>";
-        print_r($valor["capital"]);
-        echo "</pre>";
-        echo "<hr />";
-    }
+        ]
+
+    ];
+    //mostrar la vista de paises
+    //llevando el arreglo de paises
+    return view('paises')->with("naciones" , $paises);
+
+
 });
 
 
